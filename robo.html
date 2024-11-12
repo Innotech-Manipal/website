@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finaltask webdev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+           /* background-image: url('bg 1 final task.png'); */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            animation: changeBackground 3s infinite;
+            color: white;
+        }
+
+
+        nav {
+            background-color: rgb(0, 0, 0);
+            width: 100%;
+            height: 4.777%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 1.481%;
+        }
+        nav img {
+            width: 26vh;
+            height: auto;
+            margin-left: 1%;
+            margin-top: -0.9%;
+        }
+
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+            font-family: 'Lato';
+            font-size: small;
+            margin-top: -3%;
+        }
+
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 4%;
+        }
+
+
+        nav ul li a {
+            color: rgb(142, 142, 142);
+            text-decoration: none;
+            padding: 1% 4%;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+
+        nav ul li a:hover {
+            background-color: rgb(0, 0, 0);
+            color: white;
+        }
+
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000000;
+            min-width: 370.8%;
+            z-index: 1;
+        }
+
+
+        .dropdown-content a {
+            color: rgba(109, 109, 109, 0.886);
+            padding: 7% 10%;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-size: 0.625rem;
+            font-weight: bold;
+        }
+
+
+        .dropdown-content a:hover {
+            background-color: #000000;
+        }
+
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        nav ul li a:hover {
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+        }
+
+
+        @keyframes changeBackground {
+
+
+           
+            0%, 100% {
+                background-image: url('2.png');
+            }
+           
+            25% {
+                background-image: url('3.png');
+            }
+           50% {
+                background-image: url('4.png');
+            }
+            75% {
+                background-image: url('5.png');
+            }
+        }
+       
+        .slide {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+            top: 5.55vh;
+        }
+        .slide1 {
+            background-image: url('2.png');
+            animation: changeBackground 3s infinite;
+           
+        }
+
+
+        .slide2 {
+            background-image: url('bg 1 final task (3).png');
+            position: relative;
+        }
+
+
+        .slide3 {
+            background-image: url('bg 1 final task (8).png');
+            position: relative;
+        }
+     
+     
+
+
+        .slide2-text {
+            font-size: 1.187rem;
+            padding: 1.851%;
+            position: absolute;
+            bottom: 22.918%;
+            left: 75%;
+            transform: translateX(-50%);
+            width: 40%;
+            text-align: left;
+            line-height: 1.32;
+            font-family: 'Lato';    
+        }
+
+
+        .slide2-text2 {
+            font-size: 1.187rem;
+           /* padding: 20px;*/
+            position: absolute;
+            bottom: 38%;
+            left: 25%;
+            transform: translateX(-50%);
+            width: 41%;
+            text-align: left;
+            line-height: 1.32;
+            font-family: 'Lato';
+        }
+        .slide3-text {
+            font-size: 1.187rem;
+            padding: 1%;
+            position: absolute;
+            bottom: 24%;
+            left: 25%;
+            transform: translateX(-50%);
+            width: 40%;
+            text-align: left;
+            line-height: 1.32;
+            font-family: 'Lato';
+        }
+        .overlay-image {
+            position: absolute;
+            top: 50%;
+            left:75%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            width: 39%;
+            height: auto;
+        }
+
+
+        .container {
+           position: relative;
+           padding-top: 5.55vh;
+        }
+
+
+        .slide4 {
+           background-image: url('bg 1 final task (11).png');
+           background-size: cover;
+           background-position: center;
+           height: 50vh;
+           color: white;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           text-align: center;
+           position: relative;
+   
+        }
+
+
+        .text {
+           padding: 1.25rem;
+           position: absolute;
+           top: 30%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           text-align: center;
+        }
+
+
+         .text h2 {
+           font-size: 1.5rem;
+           font-family: 'Lato';
+           color: rgb(0, 251, 255);
+        }
+
+
+         .text p {
+           font-size: 1.187rem;
+           font-family: 'Lato';
+           font-style: italic;
+        }
+
+
+         .image-links {
+           position: absolute;
+           bottom: 14%;
+           left: 50%;
+           transform: translateX(-50%);
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+           width: 85%;
+        }
+
+
+         .image-links a {
+           text-decoration: none;
+           color: #333;
+        }
+
+
+        .image-links img {
+           width: 75%;
+           height: auto;
+        }
+
+
+       
+        .highlighted {
+           color: rgb(0, 251, 255);
+        }
+        .highlighted-2{
+           color: rgb(0, 219, 219);
+        }
+        .small-text {
+            font-size: 0.854rem;
+        }
+        .med-text {
+            font-size: 1.131rem;
+        }
+
+
+        .large-text {
+            font-size: 2.375rem;
+        }
+        .midlarge-text {
+            font-size: 1.5rem;
+        }
+        .italic-text {
+            font-style: italic;
+        }
+
+
+        .bold-text {
+            font-weight: bold;
+        }
+
+
+        .light-text {
+            font-weight: lighter;
+        }
+        .slide5 {
+           position: relative;
+           top: calc(100% + 2vh);
+           background-image: url('bg 1 final task (14).png');
+           height: 100vh;
+           background-size: cover;
+           background-position: center;
+           padding-top: 5.55vh;
+   
+        }
+
+
+        .slide5-text5 {
+            font-size: 1.375rem;
+            letter-spacing: 0.3px;;
+            padding: 3%;
+            border-radius: 2%;
+            position: absolute;
+            bottom: 6%;
+            left: 70.6%;
+            transform: translateX(-50%);
+            width: 49%;
+            text-align: left;
+            line-height: 1.32;
+            font-family: 'Lato';
+        }
+
+
+        .contact-form {
+            position: absolute;
+            top: 50%;
+            left: 5.5%;
+            transform: translateY(-50%);
+            width: 30%;
+            font-family: 'Lato';
+            background-color: transparent;
+            border: 0.5vh solid rgb(0, 251, 255);
+            padding: 2.78%;
+            color: rgb(255, 255, 255);
+           
+        }
+
+
+        .contact-form h2 {
+            font-size: 1.5rem;
+            margin-bottom: 5%;
+            margin-top: 0px;
+            padding: 0%;
+            color: rgb(255, 255, 255);
+        }
+
+
+        .form-group {
+            margin-bottom: 5.2%;
+        }
+
+
+        .form-group label {
+            display: block;
+            margin-bottom: 1.5%;
+        }
+
+
+        .form-group input,
+        .form-group textarea {
+            width: 93.5%;
+            padding: 1%;
+            border-radius: 10px;
+            border:none;
+            border: 0.5vh solid rgb(0, 251, 255);
+            background-color: transparent;
+            padding: 2.5%;
+            color: white;
+            font-family: 'Lato';
+        }
+
+
+        button[type="submit"] {
+            padding: 2% 4%;
+            background-color: rgb(0, 251, 255);
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-family: 'Lato';
+            font-weight: bold;
+            margin-bottom: 4.5%;
+        }
+        button:hover{
+            opacity: 0.7;
+        }
+
+
+        .overlay-image-5 {
+            position: absolute;
+            top: 37.2%;
+            left: 70%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            width: 49%;
+            height: auto;
+            padding-top: 2.3%;
+   
+           
+        }
+
+
+        .video-container {
+            position: absolute;
+            top: 109%;
+            right: 7%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 9999;
+        }
+
+
+        .video-container img {
+            max-width: 40%;
+            height: auto;
+            margin-right: 8%;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        .video-container img:hover{
+            opacity: 0.7;
+        }
+        .footer {
+            position: relative;
+            bottom: 0;
+            width: 98.4%;
+            height: 90%;
+            background-color: #000000;
+            color: white;
+            padding: 0.8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Lato';
+            line-height: 1.32;
+        }
+
+
+        .footer-left {
+            flex: 1;
+            margin-left: 4.8%;
+        }
+        .footer-left p {
+           margin-left: 0;
+        }
+
+
+        .footer-right {
+            flex: 1;
+            text-align: right;
+            margin-right: 4.7%;
+        }
+
+
+        .footer-right img {
+            width: 10%;
+            margin-left: 5%;
+            cursor: pointer;
+            opacity: 1;
+        }
+
+
+        .footer-right img:hover {
+            opacity: 0.7;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#slide1"><img src="Long Version NO bg.png" alt="Logo"></a>
+        <ul>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">HOME</a>
+                <div class="dropdown-content">
+                    <a href="#slide2">ABOUT US</a>
+                    <a href="#slide3">GOALS AND VISION</a>
+                    <a href="#slide4">OUR SPONSORS</a>
+                    <a href="#slide5">CONTACT US</a>
+                </div>
+            </li>
+            <li><a href="#">WORK</a></li>
+            <li><a href="#">ACHIEVEMENTS</a></li>
+            <li><a href="#">TEAM</a></li>
+            <li><a href="#">GALLERY</a></li>
+        </ul>
+    </nav>
+   
+    <div id="slide1"><div class="slide slide1"></div></div>
+ 
+    <div id="slide2"><div class="slide slide2">
+    <div class="slide2-text">Established in <span class="highlighted">2009</span>, Team RoboManipal is the esteemed <span class="highlighted">official robotics
+         team of MAHE, Manipal</span>, comprising a multifaceted ensemble of <span class="highlighted">over forty fervent undergraduate
+         students </span> united by their enthusiasm for robotics. <br> <br>
+
+
+          Our <span class="highlighted">14-year journey </span> marked by accomplishments through prestigious
+          competitions like <span class="highlighted">ABU ROBOCON</span>, our flagship competition. We also
+          organize <span class="highlighted">Robowars for TechTatva</span>, MAHE's technical fest.
+          Additionally, we're <span class="highlighted">researching projects</span> like a
+          <span class="highlighted">6-degree-of-freedom robot</span>, <span class="highlighted">a humanoid biped</span>, and a <span class="highlighted">quadruped robot</span>,
+          which showcases our unwavering commitment. </div>
+   <div class="slide2-text2">  <span class="small-text"><span class="highlighted"> CHARTING TECHNOLOGY’S EVOLUTION TO REDEFINE ROBOTICS FRONTIERS </span></span><br> <br><br>
+    <span class="large-text"><span class="bold-text">RoboManipal</span>, the official <br>
+         robotics team of MAHE  <br> </span>
+         <span class="italic-text"><span class="med-text"><span class="highlighted">Where creativity and technology phase into one. </span></span> </span></div></div>
+   </div>
+
+
+   <div id="slide3"><div class="slide slide3"><img class="overlay-image" src="robo image 13 copy.png" alt="Overlay Image">
+        <div class="slide3-text"> <span class="highlighted"><span class="bold-text"><span class="midlarge-text">| OUR GOALS AND VISION |</span></span> </span><br> <br>
+        We harbor grand visions for the future of robotics, envisioning
+        it as a catalyst <span class="highlighted">propelling humanity forward through groundbreaking
+        technologies</span>. Our belief lies in robotics' ability to nurture creativity,
+        providing a fertile <span class="highlighted">ground</span> for innovative ideas to flourish.
+        Undeterred, we <span class="highlighted">embrace the most demanding global robotics competitions</span>.
+        <br><br>Driven by a thirst for knowledge, we <span class="highlighted">devise ingenious solutions to complex problems</span>,
+        leveraging robotics' vast potential and applications. Our commitment lies in
+        unlocking this ever-evolving domain's full potential, <span class="highlighted">shaping a future where
+        robotics drives human progress</span>.
+        <div class="video-container">
+            <a href="RoboManipal - MIT's Official Robotics Student Project!.mp4" >
+                <img src="image-removebg-preview (3).png" alt="Image">
+            </a>
+        </div>
+          </div>
+        </div>
+        </div>
+
+
+        <div id="slide4"> <div class="container">
+            <div class="slide4">
+                <div class="text">
+                    <h2>| OUR SPONSORS |</h2>
+                    <p>Those who support us and help turn our ideas into tangible realities</p>
+                </div>
+            </div>
+            <div class="image-links">
+                <a href="https://www.ansys.com/en-in" target="_blank"><img src="ansyslogo.png" alt="ansys"></a>
+                <a href="https://www.solidworks.com/" target="_blank"><img src="solidworslogo.png" alt="solidworks"></a>
+                <a href="https://fracktal.in/" target="_blank"><img src="fracktallogo2.png" alt="fracktal"></a>
+                <a href="https://www.pcbpower.com/" target="_blank"><img src="pcblogo.png" alt="pcb power"></a>
+                <a href="https://www.altium.com/in" target="_blank"><img src="altiumlogo.png" alt="altium"></a>
+            </div>
+        </div>
+        </div>
+
+
+        <div id="slide5"><div class="slide slide5"><img class="overlay-image-5" src="robophoto.jpg" alt="proup photo">
+            <div class="slide5-text5"><span class="italic-text"> <span class="highlighted">"</span>Innovation is seeing
+                 what everyone has seen and thinking what
+                 no one has thought <span class="highlighted">"</span>
+                 <br>-<span class="highlighted-2"> Dr. Albert Szent-Györgyi</span></span></div>
+
+
+            <form class="contact-form">
+                <h2>Contact Us <br><span class="italic-text"><span class="light-text"><span class="med-text">We'll get back to you as soon as we can</span></span></span></h2>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="footer">
+            <div class="footer-left">
+                <p><span class="bold-text"><span class="midlarge-text">Team<span class="highlighted"> RoboManipal </span> <br></span> </span>
+                    <br>8QXR+5R4, Library Rte, Eshwar Nagar, Manipal, Karnataka 576104 <br>
+                    <br> <span class="bold-text">PHONE</span> :<span class="highlighted"> +91 9630093604 </span><br>
+                    <br><span class="bold-text">EMAIL</span> :<span class="highlighted"> team.robomanipal@gmail.com </span></p>
+            </div>
+            <div class="footer-right">
+                <a href="https://www.instagram.com/team.robomanipal"  target="_blank"><img src="video.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/robomanipal"  target="_blank"><img src="social-media (1).png" alt="Facebook"></a>
+               <!--<a href="https://www.youtube.com/robomanipal"  target="_blank"><img src="youtube.png" alt="YouTube"></a> -->
+                <a href="https://www.linkedin.com/company/robomanipal"  target="_blank"><img src="business.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
