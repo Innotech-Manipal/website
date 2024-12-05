@@ -28,11 +28,15 @@
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
-        header .logo img {
+        .logo img {
             height: 50px;
+        }
+
+        nav {
+            position: relative;
         }
 
         nav ul {
@@ -54,6 +58,51 @@
             border-bottom: 2px solid #66ff66;
         }
 
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+        }
+
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            background-color: rgba(0, 51, 51, 0.9);
+            padding: 20px;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            border-radius: 5px;
+        }
+
+        .mobile-nav li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .mobile-nav.active {
+                display: flex;
+            }
+        }
+
         .hero-section {
             height: 100vh;
             display: flex;
@@ -63,18 +112,6 @@
             text-align: center;
             padding: 20px;
             background-color: rgba(0, 51, 51, 0.8);
-        }
-
-        .brain-image {
-            width: 300px;
-            opacity: 0;
-            transform: translateY(-30px);
-            transition: opacity 1.5s ease, transform 1.5s ease;
-        }
-
-        .brain-image.loaded {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .hero-section h1 {
@@ -108,12 +145,6 @@
             text-align: center;
         }
 
-        section p, .team-grid, .sponsor-logos {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
         footer {
             display: flex;
             justify-content: space-between;
@@ -125,96 +156,6 @@
         .footer_left {
             text-align: left;
         }
-
-        .footer_right {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .footer_right a {
-            color: #66ff66;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 24px;
-        }
-
-        .footer_right a:hover {
-            color: #00cc99;
-        }
-
-        .about {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 40px 20px;
-            max-width: 1200px;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        #image img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .content {
-            flex: 1;
-            font-size: 1.2rem;
-            line-height: 1.6;
-            text-align: justify;
-        }
-
-        .contact-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-form {
-            flex: 1;
-            background-color: rgba(0, 51, 51, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 10px;
-            color: #66ff66;
-            font-weight: bold;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid #66ff66;
-            background-color: rgba(0, 51, 51, 0.8);
-            color: white;
-        }
-
-        .contact-form button {
-            padding: 10px 20px;
-            background-color: #66ff66;
-            color: #003300;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .contact-form button:hover {
-            background-color: #00cc99;
-        }
     </style>
 </head>
 
@@ -224,7 +165,18 @@
             <img src="IM_Logo.png" alt="Innotech Manipal Logo">
         </div>
         <nav>
+            <div class="hamburger" onclick="toggleMobileNav()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <ul class="mobile-nav">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -234,45 +186,38 @@
     </header>
 
     <section id="home" class="hero-section">
-        <div id="particles-js"></div>
-        <img src="Brain.png" alt="Brain Image" class="brain-image" id="brain-img">
         <h1>Innotech Manipal</h1>
+        <p>Empowering students to innovate and create.</p>
+        <a href="#about" class="btn">Learn More</a>
     </section>
 
     <section id="about">
         <h2>About Us</h2>
-        <div class="about">
-            <div class="content">
-                <p>We are a student-driven research initiative, designed to empower students to explore, create, and publish their projects.</p>
-            </div>
-        </div>
+        <p>We are a student-driven research initiative aimed at fostering innovation and creativity among students at Manipal Institute of Technology.</p>
     </section>
 
     <section id="projects">
         <h2>Our Projects</h2>
-        <div class="project-container">
-            <div class="image-container">
-                <a href="#"><img src="project1.png" alt="Project 1"></a>
-            </div>
-        </div>
+        <p>We publish research papers and work on multidisciplinary projects focused on innovative solutions.</p>
     </section>
 
     <section id="contact">
         <h2>Contact Us</h2>
-        <div class="contact-section">
-            <form class="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <p>Email: innotech@example.com</p>
     </section>
 
     <footer>
         <div class="footer_left">
-            <p>Innotech Manipal</p>
+            <p>&copy; 2024 Innotech Manipal</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMobileNav() {
+            const mobileNav = document.querySelector('.mobile-nav');
+            mobileNav.classList.toggle('active');
+        }
+    </script>
 </body>
 
 </html>
