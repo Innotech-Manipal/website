@@ -4,265 +4,596 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innotech Manipal</title>
+    <title>InnotechManipal</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
     <style>
-        /* Reset and Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #003300, #003366); 
+    scroll-behavior: smooth;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 51, 51, 0.9); 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
 
-        /* Header Styles */
-        header {
-            background: #003300;
-            color: white;
-            padding: 20px;
+header .logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px; /* Reduced gap between the navigation items */
+    padding-right: 20px; /* Adds a small right padding to the nav for spacing */
+    margin-right: 0; /* Removes extra margin */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+nav ul li a:hover {
+    border-bottom: 2px solid #66ff66; /* Light green hover effect */
+}
+
+@media (max-width: 1024px) {
+    nav ul {
+        gap: 10px; /* Further reduced gap for smaller screens */
+    }
+}
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 51, 51, 0.8); /* Dark background with opacity */
+}
+.brain-image {
+            width: 300px;
+            opacity: 0;
+            transform: translateY(-30px);
+            transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.brain-image.loaded {
+            opacity: 1;
+            transform: translateY(0);
+}
+.hero-section h1 {
+    font-size: 3rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #66ff66;
+    color: #003300;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+.btn:hover {
+    background-color: #00cc99;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+section p, .team-grid, .sponsor-logos {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between; /* Aligns left and right sections */
+    background-color: #001a1a;
+    padding: 20px;
+    align-items: center; /* Aligns both left and right vertically in the middle */
+}
+
+.footer_left {
+    text-align: left;
+}
+
+
+.footer_right {
+    display: flex; /* Use flexbox to align icons horizontally */
+    gap: 10px; /* Adds space between the icons */
+    align-items: center; /* Centers the icons vertically */
+}
+
+.footer_right a {
+    color: #66ff66; /* Matching footer text color */
+    text-decoration: mediumorchid;
+    margin: 0 10px; /* Adds space between icons */
+    font-size: 24px; /* Icon size */
+}
+
+.footer_right a:hover  {
+    color: #00cc99; /* Hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        background-color: rgba(0, 51, 51, 0.9);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        display: none;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 10px;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px; /* Adds padding around the section */
+    margin: 0 auto;
+    max-width: 1200px; /* Limits the width of the section for better readability */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 30px; /* Space between the text and image */
+}
+
+#image img {
+    width: 100%; /* Image takes up the full width of its container */
+    max-width: 500px; /* Ensures the image doesn't get too large */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 10px; /* Adds rounded corners to the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a polished look */
+}
+
+.content {
+    flex: 1; /* The content takes up remaining space beside the image */
+    font-size: 1.2rem;
+    line-height: 1.6; /* Improves text readability */
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; /* Stacks image and text on smaller screens */
+        text-align: center;
+    }
+
+    #image img {
+        max-width: 100%; /* Ensures the image fits within the screen width */
+    }
+}
+.contact-section {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo img {
-            width: 120px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        /* Mobile Navigation */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 3px 0;
-        }
-
-        .mobile-nav {
-            display: none;
-            flex-direction: column;
-            background-color: #003300;
-            position: absolute;
-            top: 70px;
-            right: 20px;
-            width: 200px;
-            border-radius: 5px;
-            padding: 10px 0;
-        }
-
-        .mobile-nav.active {
-            display: flex;
-        }
-
-        .mobile-nav li {
-            text-align: center;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(to bottom right, #003300, #003366);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            margin-top: 80px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-        }
-
-        .btn {
-            background-color: #66ff66;
-            color: #003300;
-            padding: 15px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #00cc66;
-        }
-
-        /* Sections */
-        section {
-            padding: 60px 20px;
-            background-color: #ffffff;
-            margin-top: 20px;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            max-width: 600px;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 40px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: #f9f9f9;
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .contact-form input,
-        .contact-form textarea {
+        .contact-form {
+            flex: 1;
+            background-color: rgba(0, 51, 51, 0.9); /* Form background matching header */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a shadow to the form */
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            color: #66ff66;
+            font-weight: bold;
+        }
+
+        .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
+            margin-bottom: 20px;
             border-radius: 5px;
+            border: 1px solid #66ff66;
+            background-color: rgba(0, 51, 51, 0.8); /* Matching input background */
+            color: white;
         }
 
         .contact-form button {
-            background-color: #003300;
-            color: white;
             padding: 10px 20px;
+            background-color: #66ff66;
+            color: #003300;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
 
         .contact-form button:hover {
-            background-color: #005500;
+            background-color: #00cc99;
         }
 
-        /* Footer */
-        footer {
-            background: #001a1a;
-            color: white;
-            text-align: center;
+        .map {
+            flex: 0;
+            padding-block: auto;
+            text-align: right;
+        }
+.footer_right {
+    text-align: right;
+    padding-top: 20px;
+}
+
+
+.footer_right a {
+    color: #66ff66; /* Matching footer text color */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 24px; /* Icon size */
+}
+
+.footer_right a:hover {
+    color: #00cc99; /* Hover effect */
+}
+.project-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+.image-container {
+    position: relative;
+    width: 45%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Overlay effect */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 51, 51, 0.9); /* Dark background with opacity */
+    color: white;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Smooth transition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 50%; /* Full height for centering the text */
+    text-align: center;
+}
+
+/* Make the text visible only when hovering over the image */
+.image-container:hover .overlay {
+    opacity: 1; /* Show text on hover */
+}
+.contact-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: rgba(0, 51, 51, 0.9); /* Form background matching header */
             padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a shadow to the form */
         }
 
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .mobile-nav.active {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            color: #66ff66;
+            font-weight: bold;
         }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #66ff66;
+            background-color: rgba(0, 51, 51, 0.8); /* Matching input background */
+            color: white;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #66ff66;
+            color: #003300;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #00cc99;
+        }
+
+        .map {
+            flex: 0;
+            padding-block: auto;
+            text-align: right;
+        }
+.footer_right {
+    text-align: right;
+    padding-top: 20px;
+}
+
+
+.footer_right a {
+    color: #66ff66; /* Matching footer text color */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 24px; /* Icon size */
+}
+
+.footer_right a:hover {
+    color: #00cc99; /* Hover effect */
+}
+.project-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+.image-container {
+    position: relative;
+    width: 45%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background-color: #b61924;  You can customize the background color */ 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+
+}
+
+.count-particles {
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13E8E9;
+  font-size: .8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.js-count-particles {
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles {
+  -webkit-user-select: none;
+}
+
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles {
+  border-radius: 0 0 3px 3px;
+}
+
+/* Overlay effect */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 51, 51, 0.9); /* Dark background with opacity */
+    color: white;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Smooth transition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 50%; /* Full height for centering the text */
+    text-align: center;
+}
+
+/* Make the text visible only when hovering over the image */
+.image-container:hover .overlay {
+    opacity: 1; /* Show text on hover */
+}
+
+
     </style>
 </head>
-
 <body>
-    <header>
+    <!-- Top Pane -->
+    <header id="top-pane">
         <div class="logo">
-            <img src="IM_Logo.png" alt="Innotech Manipal Logo">
+        <img src="IM_Logo.png" alt="Innotech Manipal Logo">
         </div>
         <nav>
-            <div class="hamburger" onclick="toggleMobileNav()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-            <ul class="mobile-nav">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#sponsors">Projects</a></li>
+                <li><a href="team.html">Team Members</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <h1>Welcome to Innotech Manipal</h1>
-        <p>Innovate, Inspire, and Create for a better tomorrow.</p>
-        <a href="#about" class="btn">Learn More</a>
+    <!-- Home Section -->
+    <section id="home" class="hero-section">
+        <div id="particles-js"></div>
+        <img src="Brain (Web format).png" alt="Brain Image" class="brain-image" id="brain-img">
+        <h1>Innotech Manipal</h1>
     </section>
-
     <section id="about">
         <h2>About Us</h2>
-        <p>We are a student-driven research initiative at the Manipal Institute of Technology. Our mission is to foster innovation, inspire creativity, and empower students to solve real-world problems through multidisciplinary research.</p>
+        <div class="about">
+            <div class="content">
+                <p> We are a student-driven research initiative, uniquely designed to give the student the power to explore, create, and publish their very own interdisciplinary projects. Whether one's passionate about science, tech, or something totally unique, we provide access to subject experts, the necessary equipment, and a community of curious minds.
+                    <br> From leading research to getting it published, students receive expert guidance at every step of the journey. You’re not just learning—you’re leading, experimenting, and pushing the boundaries of what’s possible. <br>Here, innovation knows no limits...</p>
+                    <break></break>
+                    <iframe width="100%" width="300"height="500" src="https://www.youtube.com/embed/k42CXBRh6vY?si=Yo7Ufbd7o0RpwwrO" title="We are Innotech Manipal.." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <!-- Fallback text for unsupported browsers -->
     </section>
+    
+    
 
-    <section id="projects">
+    <section id="sponsors">
         <h2>Our Projects</h2>
-        <p>Explore our projects ranging from environmental research to AI-driven solutions and more.</p>
-    </section>
+        <div class="sponsor-logos">
+            <!-- Placeholder for two project images with hover effect -->
+            <div class="project-container">
+                <div class="image-container">
+                    <a href="https://pubs.rsc.org/en/content/articlehtml/2024/ay/d4ay01245c" target="_blank"><img src="buenapap.png"alt="Project 1">
+                    <div class="overlay">
+                        <p class="overlay-text">Wax chalk and Self-Heating Paper-based Analytical Device (SH PAD) for the Detection of Bisphenol A
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-form">
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+                        </p>
+                    </div>
+                    </a>
+                </div>
+    
+                <div class="image-container">
+                    <a href="https://www.mdpi.com/2624-8549/6/5/60/xml"target="_blank">
+                    <img src="rachanapap.png" alt="Project 2">
+                    <div class="overlay">
+                        <p class="overlay-text">Advancements in Microfluidics Platforms for Glioblastoma Research</p>
+                    </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
+
+
+    <!-- Gallery Section -->
+    
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-section">
+          <div class="contact-form">
+            <form id="contact-form"   action="https://formspree.io/f/mvgorqwd"          method="POST">
+              
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+              
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+              
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+              
+              <button type="submit">Send Message</button>
+            </form>
+      <!-- JavaScript goes here -->
+    
+      
+              </div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d243.32223164856555!2d74.7932334936171!3d13.35222111766242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1726054046573!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Innotech Manipal. All Rights Reserved.</p>
+        <div class="footer_left">
+            <p>Innotech Manipal<br>
+            PHONE: +91 1234567890<br>
+            EMAIL: innotechmanipal@gmail.com</p>
+        </div>
+        <div class="footer_right">
+            <a href="https://www.youtube.com/@InnotechManipal" target="_blank"><img src="youtube.png" alt="youtube" height="48" width="48"></a>
+            <a href="https://www.instagram.com/innotech_manipal/" target="_blank"><img src="instagram.png" alt="instagram"height="48" width="48"></a>
+            <a href="https://www.linkedin.com/company/innotech-manipal/posts/?feedView=all" target="_blank"><img src="linkedin.png" alt="linkedin"height="48" width="48"></a>
+        </div>
     </footer>
 
-    <script>
-        function toggleMobileNav() {
-            document.querySelector('.mobile-nav').classList.toggle('active');
-        }
-    </script>
+    <script src="effect.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="effect1.js"></script>
 </body>
-
 </html>
