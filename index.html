@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
     <style>
+        
 body {
     padding: 0;
     margin: 0;
@@ -30,34 +31,45 @@ header {
     top: 0;
     z-index: 100;
 }
-
 header .logo img {
     height: 50px;
 }
 
+/* Default style for desktop view */
+/* Default style for desktop view */
+/* Default style for desktop view */
+/* Default style for desktop */
 nav ul {
+    display: flex; /* Always show menu in desktop */
     list-style: none;
-    display: flex;
-    gap: 15px; /* Reduced gap between the navigation items */
-    padding-right: 20px; /* Adds a small right padding to the nav for spacing */
-    margin-right: 0; /* Removes extra margin */
+    gap: 15px;
+    margin: 0;
+    margin-left: -20px;
+    padding: 0;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+
+
+    /* Hamburger menu (show it on mobile only) */
+    .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 15;
     padding: 10px;
-}
-nav ul li a:hover {
-    border-bottom: 2px solid #66ff66; /* Light green hover effect */
+    background-color: rgba(102, 255, 102, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 1024px) {
-    nav ul {
-        gap: 10px; /* Further reduced gap for smaller screens */
+    
+    .menu-toggle div {
+        width: 30px;
+        height: 5px;
+        background-color: white;
     }
-}
+
 
 .hero-section {
     height: 100vh;
@@ -141,37 +153,282 @@ footer {
     margin: 0 10px; /* Adds space between icons */
     font-size: 24px; /* Icon size */
 }
+.footer_right a img {
+    width: 32px; /* Adjust width */
+    height: 32px; /* Adjust height */
+}
+
+.footer_right {
+    display: flex;
+    gap: 10px; /* Space between icons */
+    align-items: center; /* Vertically align icons */
+}
+
 
 .footer_right a:hover {
     color: #00cc99; /* Hover effect */
 }
 
-/* Responsive Design */
+    
+        .logo img {
+            height: 50px;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            margin-left: -20px;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        nav ul li a:hover {
+            border-bottom: 2px solid #66ff66;
+        }
+
+        /* Hamburger Menu */
+      
+.menu-toggle div {
+    width: 30px;
+    height: 4px;
+    background-color: #003300; /* Dark green color for bars */
+    border-radius: 2px; /* Rounded edges for leaf style */
+    transition: all 0.3s ease;
+}
+.menu-toggle:hover {
+    background-color: #00cc99; /* Brighter green on hover */
+    transform: scale(1.1); /* Slightly enlarge */
+}
+
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        background-color: rgba(0, 51, 51, 0.9);
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        display: none;
-    }
-
-    nav ul li {
-        text-align: center;
-        padding: 10px;
-    }
-
-    nav ul li a {
-        font-size: 1.2rem;
-    }
-
     .menu-toggle {
-        display: block;
-        cursor: pointer;
+        display: flex;
+        position: fixed; /* Keep it visible while scrolling */
+        top: 20px;
+        right: 20px; /* Adjust its alignment */
     }
 }
+/* Base styles for the menu (applies to all screens) */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin-left: -20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid #66ff66;
+}
+nav {
+    position: relative; /* Or absolute/fixed, if already used */
+    left: -20px; /* Adjust this value to move it left */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the menu by default on mobile */
+        flex-direction: column;
+        margin-left: -20px;
+        background-color: rgba(0, 51, 51, 0.95);
+        position: fixed;
+        top: 70px;
+        right: 10px;
+        width: 80%;
+        max-width: 300px;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+    }
+
+    nav ul.show {
+        display: flex; /* Show the menu when toggled */
+    }
+
+ 
+    .menu-toggle div {
+        width: 30px;
+        height: 5px;
+        background-color: white;
+    }
+}
+
+
+nav ul li {
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #66ff66; /* Light green separator */
+}
+
+nav ul li a {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #00cc99; /* Bright green hover effect */
+}
+        
+
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 51, 51, 0.8);
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #66ff66;
+            color: #003300;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+        }
+
+        .btn:hover {
+            background-color: #00cc99;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        section p {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-form {
+            background-color: rgba(0, 51, 51, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            color: #66ff66;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #66ff66;
+            background-color: rgba(0, 51, 51, 0.8);
+            color: white;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #66ff66;
+            color: #003300;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #00cc99;
+        }
+
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 10px;
+        }
+        .footer_left,
+        .footer_right {
+            text-align: center;
+        }
+
+        .footer_right a {
+            color: #66ff66;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+
+        .footer_right a:hover {
+            color: #00cc99;
+        }
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px; /* Ensures proper sizing */
+}
+
+.map {
+    flex: 1;
+    min-width: 300px; /* Ensures proper sizing */
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column; /* Stack items */
+    }
+
+    .map {
+        order: 2; /* Ensures the map is below the form */
+    }
+}
+
+
 .about {
     display: flex;
     align-items: center;
@@ -208,59 +465,6 @@ footer {
         max-width: 100%; /* Ensures the image fits within the screen width */
     }
 }
-.contact-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-form {
-            flex: 1;
-            background-color: rgba(0, 51, 51, 0.9); /* Form background matching header */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a shadow to the form */
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 10px;
-            color: #66ff66;
-            font-weight: bold;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid #66ff66;
-            background-color: rgba(0, 51, 51, 0.8); /* Matching input background */
-            color: white;
-        }
-
-        .contact-form button {
-            padding: 10px 20px;
-            background-color: #66ff66;
-            color: #003300;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .contact-form button:hover {
-            background-color: #00cc99;
-        }
-
-        .map {
-            flex: 0;
-            padding-block: auto;
-            text-align: right;
-        }
 .footer_right {
     text-align: right;
     padding-top: 20px;
@@ -320,59 +524,6 @@ footer {
 .image-container:hover .overlay {
     opacity: 1; /* Show text on hover */
 }
-.contact-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-form {
-            flex: 1;
-            background-color: rgba(0, 51, 51, 0.9); /* Form background matching header */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a shadow to the form */
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 10px;
-            color: #66ff66;
-            font-weight: bold;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid #66ff66;
-            background-color: rgba(0, 51, 51, 0.8); /* Matching input background */
-            color: white;
-        }
-
-        .contact-form button {
-            padding: 10px 20px;
-            background-color: #66ff66;
-            color: #003300;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .contact-form button:hover {
-            background-color: #00cc99;
-        }
-
-        .map {
-            flex: 0;
-            padding-block: auto;
-            text-align: right;
-        }
 .footer_right {
     text-align: right;
     padding-top: 20px;
@@ -478,25 +629,33 @@ footer {
 }
 
 
+
     </style>
 </head>
 <body>
-    <!-- Top Pane -->
-    <header id="top-pane">
-        <div class="logo">
+  <!-- Header -->
+  <header>
+    <div class="logo">
         <img src="IM_Logo.png" alt="Innotech Manipal Logo">
+    </div>
+    <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-        <nav>
+        <div class="menu-container">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#sponsors">Projects</a></li>
-                <li><a href="team.html">Team Members</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
+    
+</header>
+
 
     <!-- Home Section -->
     <section id="home" class="hero-section">
@@ -547,10 +706,6 @@ footer {
     </section>
 
 
-
-    <!-- Gallery Section -->
-    
-
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
@@ -579,22 +734,39 @@ footer {
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+      <!-- Footer -->
+      <footer>
         <div class="footer_left">
-            <p>Innotech Manipal<br>
-            PHONE: +91 9963377311<br>
-            EMAIL: innotechmanipal@gmail.com</p>
+            <p>Innotech Manipal<br>PHONE: +91 9963377311<br>EMAIL: innotechmanipal@gmail.com</p>
         </div>
         <div class="footer_right">
-            <a href="https://www.youtube.com/@InnotechManipal" target="_blank"><img src="youtube.png" alt="youtube" height="48" width="48"></a>
-            <a href="https://www.instagram.com/innotech_manipal/" target="_blank"><img src="instagram.png" alt="instagram"height="48" width="48"></a>
-            <a href="https://www.linkedin.com/company/innotech-manipal/posts/?feedView=all" target="_blank"><img src="linkedin.png" alt="linkedin"height="48" width="48"></a>
+            <a href="https://www.youtube.com/@InnotechManipal" target="_blank">
+                <img src="youtube.png" alt="YouTube">
+            </a>
+            <a href="https://www.instagram.com/innotech_manipal/" target="_blank">
+                <img src="instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/company/innotech-manipal/posts/?feedView=all" target="_blank">
+                <img src="linkedin.png" alt="LinkedIn">
+            </a>
         </div>
     </footer>
+    
 
     <script src="effect.js"></script>
+        <!-- toogle -->
+
+    <script>
+     const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+
+    // Toggle the menu visibility when the hamburger is clicked
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
+    </script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="effect1.js"></script>
 </body>
+
 </html>
