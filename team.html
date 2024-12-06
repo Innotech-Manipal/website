@@ -35,6 +35,7 @@
             height: 50px;
         }
 
+        /* Navigation Styles */
         nav ul {
             list-style: none;
             display: flex;
@@ -54,6 +55,23 @@
             border-bottom: 2px solid #66ff66;
         }
 
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 200;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        /* Team Member Section Styles */
         section {
             padding: 60px 20px;
             text-align: center;
@@ -63,7 +81,6 @@
             font-size: 2.5rem;
         }
 
-        /* Team Member Section Styles */
         .team-section {
             display: flex;
             justify-content: space-around;
@@ -124,6 +141,33 @@
         .footer_right a:hover {
             color: #00cc99;
         }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background-color: rgba(0, 51, 51, 0.9);
+                position: absolute;
+                top: 80px;
+                left: 0;
+                padding: 20px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body>
@@ -131,6 +175,12 @@
     <header>
         <div class="logo">
             <img src="IM_Logo.png" alt="Innotech Manipal Logo">
+        </div>
+        <!-- Hamburger Menu -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
         <nav>
             <ul>
@@ -230,24 +280,29 @@
                 <p>Srilakshmi Badri Seshadri</p>
             </div>
             <div>
-                <img src="amg.jpg" alt="AMG">
-                <p>Abhidutta Mukund Giri</p>
+                <img src="amg.jpg" alt="Aman Gupta">
+                <p>Aman Gupta</p>
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer>
         <div class="footer_left">
-            <p>Innotech Manipal<br>
-            PHONE: +91 1234567890<br>
-            EMAIL: innotechmanipal@gmail.com</p>
+            <p>&copy; 2024 Innotech Manipal. All rights reserved.</p>
         </div>
         <div class="footer_right">
-            <a href="https://www.youtube.com/@InnotechManipal" target="_blank"><img src="youtube.png" alt="youtube" height="48" width="48"></a>
-            <a href="https://www.instagram.com/innotech_manipal/" target="_blank"><img src="instagram.png" alt="instagram" height="48" width="48"></a>
-            <a href="https://www.linkedin.com/company/innotech-manipal/posts/?feedView=all" target="_blank"><img src="linkedin.png" alt="linkedin" height="48" width="48"></a>
+            <a href="https://www.instagram.com/innotech.manipal/"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/innotech-manipal/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/InnotechManipal"><i class="fa fa-facebook"></i></a>
         </div>
     </footer>
+
+    <script>
+        // JavaScript to toggle the hamburger menu
+        function toggleMenu() {
+            document.querySelector("nav").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
