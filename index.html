@@ -137,42 +137,53 @@ section p, .team-grid, .sponsor-logos {
 
 footer {
     display: flex;
-    justify-content: space-between; /* Aligns left and right sections */
+    flex-direction: row; /* Default: Row for desktop */
+    justify-content: space-between; /* Space out left and right content */
+    align-items: center; /* Vertically align items */
     background-color: #001a1a;
     padding: 20px;
-    align-items: center; /* Aligns both left and right vertically in the middle */
 }
 
 .footer_left {
-    text-align: left;
-}
-
-.footer_right {
-    display: flex; /* Use flexbox to align icons horizontally */
-    gap: 10px; /* Adds space between the icons */
-    align-items: center; /* Centers the icons vertically */
-}
-
-.footer_right a {
-    color: #66ff66; /* Matching footer text color */
-    text-decoration: mediumorchid;
-    margin: 0 10px; /* Adds space between icons */
-    font-size: 24px; /* Icon size */
-}
-.footer_right a img {
-    width: 32px; /* Adjust width */
-    height: 32px; /* Adjust height */
+    text-align: left; /* Keep text aligned left on desktop */
+    font-size: 1.1rem; /* Slightly increase font size for better readability */
+    line-height: 1.5; /* Improve spacing between lines */
 }
 
 .footer_right {
     display: flex;
-    gap: 10px; /* Space between icons */
-    align-items: center; /* Vertically align icons */
+    gap: 15px; /* Increased space between icons */
+    align-items: center;
+    padding: 0; /* Remove top padding to fix alignment */
 }
 
+.footer_right a img {
+    /* Set a larger, consistent size for the icons */
+    width: 40px; 
+    height: 40px; 
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+}
 
-.footer_right a:hover {
-    color: #00cc99; /* Hover effect */
+.footer_right a:hover img {
+    transform: scale(1.1); /* Icons slightly enlarge on hover */
+}
+
+/* Mobile View Adjustments (screen width <= 768px) */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Stack items vertically on mobile */
+        text-align: center; /* Center all content */
+    }
+
+    .footer_left {
+        text-align: center; /* Center the text on mobile */
+        margin-bottom: 20px; /* Add space between text and icons */
+    }
+
+    .footer_right {
+        justify-content: center; /* Center the icons horizontally */
+        width: 100%; /* Take full width for centering */
+    }
 }
 
     
@@ -284,11 +295,10 @@ nav {
 nav ul li {
     text-align: center;
     padding: 15px;
-    border-bottom: 1px solid #66ff66; /* Light green separator */
 }
 
 nav ul li a {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -391,21 +401,7 @@ nav ul li a:hover {
             border: none;
             border-radius: 10px;
         }
-        .footer_left,
-        .footer_right {
-            text-align: center;
-        }
 
-        .footer_right a {
-            color: #66ff66;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 24px;
-        }
-
-        .footer_right a:hover {
-            color: #00cc99;
-        }
 .contact-section {
     display: flex;
     flex-wrap: wrap;
